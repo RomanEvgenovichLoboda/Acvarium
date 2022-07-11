@@ -9,15 +9,7 @@ namespace Acvarium
 {
     static class Program
     {
-        static public Image[] fishes = new Image[]
-        {
-            new Bitmap(Properties.Resources.fish1),
-            new Bitmap(Properties.Resources.fish2),
-            new Bitmap(Properties.Resources.fish3),
-            new Bitmap(Properties.Resources.fish4),
-            new Bitmap(Properties.Resources.fish5),
-            new Bitmap(Properties.Resources.fish6)
-        };
+        static public Form1 acvarium;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -26,7 +18,8 @@ namespace Acvarium
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            acvarium = new Form1();
+            Application.Run(acvarium);
         }
     }
 }
