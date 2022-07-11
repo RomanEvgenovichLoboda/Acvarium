@@ -9,7 +9,6 @@ namespace Acvarium
 {
     static class Program
     {
-        static public Form1 acvarium;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -18,8 +17,7 @@ namespace Acvarium
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            acvarium = new Form1();
-            Application.Run(acvarium);
+            Application.Run(new Form1());
         }
     }
 }
