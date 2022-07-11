@@ -52,6 +52,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="My_PictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -87,9 +90,6 @@
     <None Include="Resources\MicrosoftTeams-image %287%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\fish4.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\fish2.png" />
   </ItemGroup>
   <ItemGroup>
@@ -100,6 +100,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fish1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fish5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fish4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fish6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

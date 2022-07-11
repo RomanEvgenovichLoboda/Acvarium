@@ -10,8 +10,10 @@ using System.Windows.Forms;
 
 namespace Acvarium
 {
+   
     public partial class Form1 : Form
-    { 
+    {
+        My_PictureBox pictureBox1;
         Timer timer = new Timer();
         bool left_muve;
         bool up_muve;
@@ -19,13 +21,18 @@ namespace Acvarium
         {
             InitializeComponent();
             DoubleBuffered = true;
+            this.BackgroundImage = global::Acvarium.Properties.Resources.acvarium;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             //this.WindowState = FormWindowState.Maximized;
             //this.FormBorderStyle = FormBorderStyle.None;
             timer.Interval = 1;
             timer.Tick += Timer_Tick;
             timer.Start();
 
-            pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
+            pictureBox1 = new My_PictureBox();
+            Controls.Add(pictureBox1);
+
+            //pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -37,7 +44,6 @@ namespace Acvarium
                 {
                     pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
                     left_muve = true;
-
                     if (pictureBox1.Location.Y <= Height - 90 && !up_muve)
                     {
                         pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
@@ -57,7 +63,6 @@ namespace Acvarium
                 {
                     pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
                     left_muve = false;
-
                     if (pictureBox1.Location.Y <= Height - 90 && !up_muve)
                     {
                         pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
