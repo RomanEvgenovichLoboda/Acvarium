@@ -14,6 +14,7 @@ namespace Acvarium
     { 
         Timer timer = new Timer();
         bool left_muve;
+        bool up_muve;
         public Form1()
         {
             InitializeComponent();
@@ -29,20 +30,26 @@ namespace Acvarium
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if(pictureBox1.Location.X <= Width - 100 && !left_muve)
+            if (pictureBox1.Location.X <= Width - 90 && !left_muve)
             {
                 pictureBox1.Location = new Point(pictureBox1.Location.X + 10, pictureBox1.Location.Y);
-                if (pictureBox1.Location.X >= Width - 110)
+                if (pictureBox1.Location.X >= Width - 100)
                 {
                     pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
                     left_muve = true;
+
+                    if (pictureBox1.Location.Y <= Height - 90 && !up_muve)
+                    {
+                        pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
+                        if (pictureBox1.Location.Y >= Height - 100) { up_muve = true; }
+                    }
+                    else if (pictureBox1.Location.Y >= 0 && up_muve)
+                    {
+                        pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 10);
+                        if (pictureBox1.Location.Y <= 10) { up_muve = false; }
+                    }
                 }
             }
-            //else if (pictureBox1.Location.X == Width - 100 || pictureBox1.Location.X == 0)
-            //{
-            //    pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
-            //    left_muve = true;
-            //}
             else if (pictureBox1.Location.X >= 0 && left_muve)
             {
                 pictureBox1.Location = new Point(pictureBox1.Location.X - 10, pictureBox1.Location.Y);
@@ -50,13 +57,19 @@ namespace Acvarium
                 {
                     pictureBox1.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
                     left_muve = false;
+
+                    if (pictureBox1.Location.Y <= Height - 90 && !up_muve)
+                    {
+                        pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y + 10);
+                        if (pictureBox1.Location.Y >= Height - 100) { up_muve = true; }
+                    }
+                    else if (pictureBox1.Location.Y >= 0 && up_muve)
+                    {
+                        pictureBox1.Location = new Point(pictureBox1.Location.X, pictureBox1.Location.Y - 10);
+                        if (pictureBox1.Location.Y <= 10) { up_muve = false; }
+                    }
                 }
             }
-            
         }
-
-        void fishMove ()
-        {
-            timer.Interval = 500;        }
     }
 }
