@@ -22,11 +22,11 @@ namespace Acvarium
             this.id = id;
         }
 
-        async  public void Muve_MyFish()
+        async public void Muve_MyFish()
         {
             if (Location.X <= form.Width - 90 && !left_muve)
             {
-                Location = new Point(Location.X + 10, Location.Y);
+                Location = new Point(Location.X + 7, Location.Y);
                 if (Location.X >= form.Width - 100)
                 {
                     pictureBox.Image.RotateFlip(RotateFlipType.Rotate180FlipY);
@@ -45,7 +45,7 @@ namespace Acvarium
             }
             else if (Location.X >= 0 && left_muve)
             {
-                Location = new Point(Location.X - 10, Location.Y);
+                Location = new Point(Location.X - 7, Location.Y);
                 if (Location.X <= 10)
                 {
                     pictureBox.Image.RotateFlip(RotateFlipType.Rotate180FlipY);

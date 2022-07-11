@@ -4,7 +4,6 @@ using System.Windows.Forms;
 
 namespace Acvarium
 {
-   
     public partial class Form1 : Form
     {
         int ids = 0;
@@ -42,7 +41,6 @@ namespace Acvarium
                     
                 }
             }
-          
         }
 
         private void button1_Click(object sender, EventArgs e)
